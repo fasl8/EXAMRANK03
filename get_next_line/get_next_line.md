@@ -6,6 +6,7 @@
 
 ### write the code step by step:
 * Your function must be declared as follows(Prototype): ``` char  *get_next_line(int fd); ```
+
 i. LINE:
 * Your function must return a line that has been read from the file descriptor passed as parameter.
 * What we call a "line that has been read" is a succesion of 0 to n characters that end with '\n' (ascii code 0x0a) or with End Of File (EOF).
