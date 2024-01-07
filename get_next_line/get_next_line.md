@@ -33,3 +33,4 @@ iiiii. FUNCTION
 iiiiii. FILE
 * Finally we consider that get_next_line has an undefined behaviour when reading from a binary file.
 
+### how to write the code step by step:
