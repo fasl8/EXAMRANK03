@@ -5,7 +5,7 @@
 | get_next_line      | get_next_line.c get_next_line.h  | read, free, malloc |
 
 ### rules:
-* Your function must be declared as follows(Prototype): ``` char  *get_next_line(int fd); ```
+* Write a function named get_next_line which prototype should be: ``` char  *get_next_line(int fd); ```
 
 i. LINE:
 * Your function must return a line that has been read from the file descriptor passed as parameter.
