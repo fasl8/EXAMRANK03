@@ -34,3 +34,38 @@ iiiiii. FILE
 * Finally we consider that get_next_line has an undefined behaviour when reading from a binary file.
 
 ### how to write the code step by step:
+1. include the header file(which contains function prototypes or declarations): ``` #include "get_next_line.h" ```
+2. include the prototypes(takes fd (file descriptor), return a ponter char): ``` char	*get_next_line(int fd) ```
+3. Index to track the current position in the buffer: ``` int i = 0; ```
+4. Variable to store the result of the read system call: ``` int store_read; ```
+5. Variable to store the current character read from the file: ``` char	line; ```
+6. Pointer to char to store the characters read from the file: ``` char	*buffer; ```
+7. if the file descriptor fd is less than 0(not a valid file descriptor), if the read system call with NULL buffer and size 0 fails(error reading from the file descriptor), if the defined BUFFER_SIZE is less than or equal to 0( invalid or non-positive buffer size.)
+```
+	if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+```
+8. ```
+    	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buffer)
+		return (NULL);
+   ```
+9. read a single character from the file descriptor fd into the variable line. The number of bytes read is stored ``` store_read = read(fd, &line, 1); ```
+
+10. reads characters from the file and stores them in the buffer until a newline character ('\n') is encountered or the end of the file is reached
+```
+	while (store_read > 0)
+	{
+		buffer[index++] = line;
+		if (line == '\n')
+			break ;
+		store_read = read(fd, &line, 1);
+	}
+```
+11. ``` buffer[index] = '\0'; ```
+12. if no characters were read (i == 0) and if the read system call returned a non-positive value (b <= 0) -> end of the file has been reached and time to free:
+```
+	if (index == 0 && store_read <= 0)
+		return (free(buffer), (NULL));
+```
+13. ``` return (buffer); ```
