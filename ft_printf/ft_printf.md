@@ -58,7 +58,7 @@ x (lowercase hexademical)
 
 example : i = 8 -> 8 % 10 = 8 -> hexa[8] -> 8
 
-example : i = 17 -> 17 / 16 = 1 -> hexa[1] -> 1
+example : i = 17 -> 17 / 16 = 1 -> hexa[1] -> 1 output -> back to the original i = 1 -> and again write 1 
 ```
 Index:  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
 Digit:  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
