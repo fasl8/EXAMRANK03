@@ -17,3 +17,7 @@ x (lowercase hexademical)
 1. ft_printf("%s\n", "toto") -> toto$
 2. ft_printf("Magic %s is %d", "number", 42) -> Magic number is 42%
 3. ft_printf("Hexadecimal for %d is %x\n", 42, 42) -> Hexadecimal for 42 is 2a$
+
+### write the code step by step:
+1. ``` #include <stdarg.h> ```: handling variable arguments in functions.
+2. ``` #include <unistd.h> ```: for the write function.
