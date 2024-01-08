@@ -55,7 +55,9 @@ x (lowercase hexademical)
 		printdigit((i / base), base, len);
 ```
 13. taking the remainder (i % base) when dividing the current value of i by the specified base,
+
 example : i = 8 -> 8 % 10 = 8 -> hexa[8] -> 8
+
 example : i = 17 -> 17 / 16 = 1 -> hexa[1] -> 1
 ```
 Index:  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
