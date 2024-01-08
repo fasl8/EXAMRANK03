@@ -13,4 +13,7 @@ d (decimal)
 x (lowercase hexademical)
 ```
 
-
+### example:
+1. ft_printf("%s\n", "toto") -> toto$
+2. ft_printf("Magic %s is %d", "number", 42) -> Magic number is 42%
+3. ft_printf("Hexadecimal for %d is %x\n", 42, 42) -> Hexadecimal for 42 is 2a$
