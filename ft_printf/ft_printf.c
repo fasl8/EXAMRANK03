@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void	ft_putstr(char *str, int *len)
+void	printstr(char *str, int *len)
 {
 	if (!str)
 		str = "(null)";
@@ -9,9 +9,9 @@ void	ft_putstr(char *str, int *len)
 		*len += write(1, str++, 1);
 }
 
-void	ft_putnbr(long long int i, int base, int *len)
+void	printdigit(long long int i, int base, int *len)
 {
-	char	*hexa;
+	char *hexa;
 
 	if (i < 0)
 	{
@@ -19,15 +19,17 @@ void	ft_putnbr(long long int i, int base, int *len)
 		*len += write(1, "-", 1);
 	}
 	if (i >= base)
-		ft_putnbr((i / base), base, len);
+		printdigit((i / base), base, len);
 	hexa = "0123456789abcdef";
 	*len += write(1, &hexa[i % base], 1);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ... )
 {
-	int len = 0;
-	va_list arg;
+	int	len;
+	va_list	arg;
+
+	len = 0;
 	va_start(arg, format);
 	while (*format)
 	{
@@ -35,15 +37,16 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 's')
-				ft_putstr(va_arg(arg, char *), &len);
+				printstr(va_arg(arg, char *), &len);
 			else if (*format == 'd')
-				ft_putnbr((long long int)va_arg(arg, int), 10, &len);
+				printdigit((long long int)va_arg(arg, int), 10, &len);
 			else if (*format == 'x')
-				ft_putnbr((long long int)va_arg(arg, unsigned int), 16, &len);
+				printdigit((long long int)va_arg(arg, unsigned int), 16, &len);
 		}
 		else
 			len += write(1, format, 1);
 		format++;
 	}
-	return (va_end(arg), len);
+	va_end(arg);
+	return (len);
 }
