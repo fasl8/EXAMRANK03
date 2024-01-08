@@ -21,3 +21,4 @@ x (lowercase hexademical)
 ### write the code step by step:
 1. ``` #include <stdarg.h> ```: handling variable arguments in functions.
 2. ``` #include <unistd.h> ```: for the write function.
+3. 
