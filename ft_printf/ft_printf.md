@@ -63,4 +63,5 @@ example : i = 17 -> 17 / 16 = 1 -> hexa[1] -> 1 output -> back to the original i
 Index:  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
 Digit:  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 ```
+#### ft_printf
 15. 
