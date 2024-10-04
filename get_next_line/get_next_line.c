@@ -53,21 +53,21 @@ char	*get_next_line(int fd)
     char	line;
     char	*buffer;
 
-	if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
- 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+    if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE <= 0)
+	return (NULL);
+    buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (!buffer)
- 	    return (NULL);
+ 	return (NULL);
     store_read = read(fd, &line, 1);
-	while (store_read > 0)
-	{
-		buffer[index++] = line;
-		if (line == '\n')
-			break ;
-		store_read = read(fd, &line, 1);
-	}
+    while (store_read > 0)
+    {
+	buffer[index++] = line;
+	if (line == '\n')
+		break ;
+	store_read = read(fd, &line, 1);
+    }
     buffer[index] = '\0';
     if (index == 0 && store_read <= 0)
-		return (free(buffer), (NULL));
+	return (free(buffer), (NULL));
     return (buffer);
 }
