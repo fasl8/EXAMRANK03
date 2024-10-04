@@ -23,7 +23,7 @@ char *ft_strdup(char *str)
 
 char *get_next_line(int fd)
 {
-    int i = 0;
+    int index = 0;
     int b;
     char line[7999999] = {0};
     char buffer;
