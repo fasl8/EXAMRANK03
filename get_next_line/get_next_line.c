@@ -70,3 +70,4 @@ char	*get_next_line(int fd)
     if (index == 0 && store_read <= 0)
 		return (free(buffer), (NULL));
     return (buffer);
+}
